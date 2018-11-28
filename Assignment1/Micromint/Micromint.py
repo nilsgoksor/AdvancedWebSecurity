@@ -31,16 +31,16 @@ def calculateAverageIterations(n, u, k, c):
 
 def calculateConfidenceWidth(x_mean, n, stdDeviation):
     lamba = 3.66
-    print("lamba:", lamba, "stDev:", stdDeviation, "n:", n)
+    #print("lamba:", lamba, "stDev:", stdDeviation, "n:", n)
     width = (lamba * stdDeviation / (n ** (1/2)))
     return width
 
 
 # MAIN
-n = 13
+n = 38
+c = 100
 u = 20
-k = 7
-c = 10000
+k = 4
 
 avgItrAmount, itrVector = calculateAverageIterations(n, u, k, c)
 stdDeviation = statistics.stdev(itrVector)
