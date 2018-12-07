@@ -18,12 +18,12 @@ if case_2:
     M='27BC'
     b= 1
 if testQuiz:
-    SA='BF0D'
-    SB='3C99'
-    DA='186F'
-    DB='2EAD'
-    M='62AB'
-    b=0
+    SA='1183'
+    SB='355A'
+    DA='03B7'
+    DB='276E'
+    M='5A38'
+    b=1
 
 # CONVERT TO BINARY
 SA_binary  = bin(int(SA, 16))[2:].zfill(16)
