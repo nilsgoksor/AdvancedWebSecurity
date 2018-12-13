@@ -1,6 +1,5 @@
 import time
 import ssl
-import statistics
 try:
     from urllib.request import urlopen
 except ImportError:
@@ -38,7 +37,6 @@ def buildSignature(url):
         print("******************************")
         print("adding to signature:", bestHex)
         print("total signature:", signature)
-        print("correct: 6823ea50b133c58cba36")
         print("******************************")
         print()
         print()
@@ -57,7 +55,11 @@ def attack(name, grade):
 
 
 totalt_time_start = time.time()
-signature, url = attack("Kalle", 5)
+
+#signature, url = attack("Kalle", 5) # Test
+#signature, url = attack("Hanna", 3) # Anton
+signature, url = attack("Oskar", 4) # Nils
+
 totalt_time_fin = time.time()
 print()
 print("---------------------------------------")
