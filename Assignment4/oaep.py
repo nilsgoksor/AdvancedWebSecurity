@@ -4,21 +4,21 @@ import math
 
 def main():
     # MGF1
-    mgfSeed = "0123456789abcdef"
-    maskLen = 30
+    mgfSeed = "46dad84c7fa3460344bda67c31e8f948addb0649f13b7509"
+    maskLen = 24
     mgf1_ans = mgf1(mgfSeed, maskLen)
     print("MGF1:", mgf1_ans)
     print()
 
     # ENCODE
-    message = "fd5507e917ecbe833878"
+    message = "30c34580753883e1f421f3a012476e14b25afed894448d65aa"
     seed = "1e652ec152d0bfcd65190ffc604c0933d0423381"
     encoded_m = oaep_encode(message, seed)
     print("Encode", encoded_m)
     print()
 
     # DECODE
-    encoded_m = "0000255975c743f5f11ab5e450825d93b52a160aeef9d3778a18b7aa067f90b2178406fa1e1bf77f03f86629dd5607d11b9961707736c2d16e7c668b367890bc6ef1745396404ba7832b1cdfb0388ef601947fc0aff1fd2dcd279dabde9b10bfc51f40e13fb29ed5101dbcb044e6232e6371935c8347286db25c9ee20351ee82"
+    encoded_m = "00451e66a5e9b51f00abe919cfa277b237008087def9d3778a18b7aa067f90b2178406fa1e1bf77f03f86629dd5607d11b9961707736c2d16e7c668b367890bc6ef1745396404ba7832b1cdfb0388ef601947fc0aff1fd2dcd279dabdf472023d44ef55c4a40d1ce16608342d9b31f7fab5270ff56cf8f962258890b9f78184c"
     decoded_m = oaep_decode(encoded_m)
     print("Decode", decoded_m)
 
